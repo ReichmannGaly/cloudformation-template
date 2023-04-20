@@ -3,3 +3,11 @@ Resources:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: 'STD21042'
+
+  MySSMParameter:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: 'MyBucketName'
+      Type: 'String'
+      Value: !Ref 'MyS3Bucket'
+      Description: 'Name of the S3 bucket'
